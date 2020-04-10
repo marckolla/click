@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #clk{
+        position: absolute;
+        top: 250px;
+        left: 600px;
+    }
+</style>
+    <script>
+        var i = 0;
+
+
+        function fujaloko(){
+            cima = Math.round(Math.random() * 500);
+            lado = Math.round(Math.random() * 900);
+            var txt = new Array("te enganei!","vc não me pega!","Olé","desiste não","errou de novo");
+            if(i >= txt.length){
+                i = 0;
+            }
+            document.getElementById("clk").style.top=cima+"px";
+            document.getElementById("clk").style.left=lado+"px";
+            document.getElementById("clk").innerHTML=txt[i];
+            i++;
+    
+        }
+        function pa(){
+            
+            document.body.style.backgroundColor="pink";
+            alert("parabéns vc conseguiu!");
+        }
+        window.addEventListener("load",function(){
+            document.getElementById("clk").addEventListener("mouseover",fujaloko);
+        });
+        
+            
+        
+        
+        </script>
+
+
+<body>
+    <button id="clk" onclick="pa()">clique aqui</button>
+
+    <button id="ve" onclick="mudacor('#f00')">vermelho</button>
+    <button id="vd" onclick="mudacor('#0f0')">verde</button>
+    <button id="cz" onclick="mudacor('#888')">cinza</button>
+    <button id="az" onclick="mudacor('#00f')">azul</button>
+    <button id="br" onclick="mudacor('#fff')">branco</button>
+
+    <script>
+
+        function mudacor(cor){
+            document.body.style.backgroundColor=cor;
+        }
+
+    
+    </script>
+
+</body>
+</html>
